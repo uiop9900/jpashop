@@ -16,7 +16,7 @@ public class Delivery {
     @Column(name="delivery_id")
     private Long id;
 
-    @OneToOne(mappedBy = "delivery")
+    @OneToOne(mappedBy = "delivery" , fetch = FetchType.LAZY)
     private Order order;    //1:1일 경우 fk를 어디에 둬도 상관없다. 그렇기떄문에 더 믾이 쓰는 테이블에 fk를 넣는다.
 
     @Embedded
