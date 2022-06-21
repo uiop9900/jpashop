@@ -1,0 +1,20 @@
+spring:
+#  datasource:
+#    url: jdbc:h2:mem:test #메모리모드로 변환 (h2.database.com에서 인메모리 경로를 가지고 옴
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+#  jpa:
+#    hibernate:
+#      ddl-auto: create-drop  마지막에 drop을 시켜줘서 깔끔하게 자원정리까지 다 한다.
+#    properties:
+#      hibernate:
+#        show_sql: true
+#        format_sql: true
+# Spring boot가 기본적으로 설정이 없으면 알아서 인메모리로 설정을 돌린다.
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
+
