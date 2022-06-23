@@ -17,7 +17,9 @@ public class ItemRepository {
         if (item.getId() == null) {
             em.persist(item);
         } else {
-            em.merge(item); //강제 업데이트
+            Item merge = em.merge(item); //merge: 받은 item으로 객체 item을 찾아서 모든 값들을 받은 값으로 변경한다. -> itemSevice의 update1 방법 코드와 동일하다.
+            //받은 item은 그대로 비영속성 객체이고 merge된 객체가 영속성 엔티티 이다.
+            // merge != item    -> 그 뒤에 또 활용하려면 merge를 이용해야한다. 단, merge를 하면 무조건 모든 필드들이 교체되기 때문에 조심해야한다. (값이 없으면 null로 넣는다,)
         }
     }
 
