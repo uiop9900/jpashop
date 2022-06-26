@@ -54,4 +54,9 @@ public class MemberService {
         return memberRepository.findOne(memberId);
     }
 
+    @Transactional
+    public void update(Long id, String name) { //변경감지를 통한 update: 영속성 context의 member를 가지고 와서 변경하면 변경감지에 의해 알아서 update된다.
+        Member member = memberRepository.findOne(id);
+        member.setName(name);
+    }
 }
